@@ -16,13 +16,13 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoute);
 
 //make ready for production
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname, '../frontend/dist')))
-
-    app.get("*", (_, res) => {
-        res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-    })
-}
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static(path.join(__dirname, '../frontend/dist')))
+//
+//     app.get("*", (_, res) => {
+//         res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+//     })
+// }
 
 app.listen(port, () => {
     console.log(`Server running on port ${port};`);
